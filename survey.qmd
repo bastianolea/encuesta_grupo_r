@@ -207,8 +207,14 @@ sd_question(
 
 ¡Muchas gracias por tu interés! Cualquier cosa puedes [contactarme](https://bastianolea.rbind.io/contacto/).
 
+
 ```{r}
 sd_close()
 ```
+
+<br>
+<br>
+
+Esta encuesta fue hecha en R con [`{surveydown}`](https://bastianolea.rbind.io/blog/surveydown_encuestas/)
 
 :::
