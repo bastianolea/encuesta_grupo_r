@@ -1,0 +1,92 @@
+# ! JUST READ - don't change the content of this file
+# Question structure extracted from survey.html
+nombre:
+  type: text
+  label: Nombre
+genero:
+  type: mc
+  label: Género
+  options:
+    Femenino: femenino
+    No binario: no_binario
+    Masculino: masculino
+    Prefiero no decirlo: prefiero_no_decirlo
+edad:
+  type: text
+  label: Edad
+region:
+  type: select
+  label: ¿En qué región de Chile vives?
+  options:
+    Arica y Parinacota: arica_y_parinacota
+    Tarapacá: tarapac
+    Antofagasta: antofagasta
+    Atacama: atacama
+    Coquimbo: coquimbo
+    Valparaíso: valpara_so
+    Metropolitana de Santiago: metropolitana_de_santiago
+    O'Higgins: o_higgins
+    Maule: maule
+    Ñuble: uble
+    Biobío: biob_o
+    La Araucanía: la_araucan_a
+    Los Ríos: los_r_os
+    Los Lagos: los_lagos
+    Aysén: ays_n
+    Magallanes: magallanes
+    Fuera de Chile: fuera_de_chile
+frecuencia:
+  type: mc
+  label: ¿Con qué frecuencia usas R?
+  options:
+    Diariamente: diariamente
+    Semanalmente: semanalmente
+    Mensualmente: mensualmente
+    Rara vez: rara_vez
+    Nunca: nunca
+nivel:
+  type: mc_buttons
+  label: ¿Cuál es tu nivel de conocimientos en R?
+  options:
+    Nulo: nulo
+    Principiante: principiante
+    Intermedio: intermedio
+    Avanzado: avanzado
+    Experto: experto
+areas:
+  type: mc_multiple_buttons
+  label: ¿En qué áreas usas/usarías R? Selecciona las que apliquen.
+  options:
+    Ciencias naturales: ciencias_naturales
+    Ciencias sociales: ciencias_sociales
+    Ciencia de datos: ciencia_de_datos
+    Estadísticas: estad_sticas
+    Economía/finanzas: econom_a_finanzas
+    Geografía: geograf_a
+    Informática: inform_tica
+    Salud: salud
+    Educación: educaci_n
+    Otras: otras
+asistencia:
+  type: mc_multiple
+  label: ¿Preferirías asistir presencial o remotamente? Marca las que correspondan.
+  options:
+    Presencial: presencial
+    Remoto: remoto
+coordinacion:
+  type: mc
+  label: ¿Te interesaría participar de la coordinación del grupo?
+  options:
+    Sí: si
+    'No': 'no'
+contacto:
+  type: mc
+  label: ¿Deseas que te contactemos para futuras reuniones? (solamente se te contactará
+    para fines de participar en el grupo)
+  options:
+    Sí: si
+    'No': 'no'
+correo:
+  type: text
+  label: Correo electrónico
+

@@ -1,0 +1,214 @@
+---
+# General Settings
+title: Encuesta
+format: html
+echo: false
+warning: false
+
+# Theme Settings
+theme: custom.scss
+barposition: top
+barcolor: "#8655AA"
+linkcolor: "#8655AA"
+
+# Survey Settings
+use-cookies: false
+auto-scroll: true
+rate-survey: false
+system-language: es
+highlight-unanswered: true
+highlight-color: purple
+capture-metadata: false
+all-questions-required: true
+---
+
+```{r}
+library(surveydown)
+```
+
+::: {.sd_page id=welcome}
+
+# Grupo de usuarios/as de R
+
+Esta encuesta es para explorar interés en organizar un **grupo de usuarias/os de R** en Santiago y/o Chile.
+
+Los datos de caracterización sólo se usarán para identificar el interés, y ni los nombres ni los correos electrónicos serán compartidos con nadie.
+
+Solamente se te contactará por correo si das el consentimiento explícito en la siguiente página.
+
+Cualquier duda o consulta puedes hacerla [aquí.](https://bastianolea.rbind.io/contacto/)
+
+
+### Preguntas de caracterización
+
+```{r}
+sd_question(
+  type  = "text",
+  id    = "nombre",
+  placeholder = "Nombre",
+  label = "Nombre"
+)
+```
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'genero',
+  label = "Género",
+  option = c("Femenino", "No binario", "Masculino", "Prefiero no decirlo")
+)
+```
+
+```{r}
+sd_question(
+  type  = "numeric",
+  id    = "edad",
+  placeholder = "Edad",
+  label = "Edad"
+)
+```
+
+```{r}
+sd_question(
+  type  = 'select',
+  id    = 'region',
+  label = "¿En qué región de Chile vives?",
+  direction = "vertical", 
+  placeholder = "Selecciona tu región",
+  selected = "Metropolitana de Santiago", 
+  option = c("Arica y Parinacota", 
+             "Tarapacá", 
+             "Antofagasta", 
+             "Atacama", 
+             "Coquimbo", 
+             "Valparaíso", 
+             "Metropolitana de Santiago", 
+             "O'Higgins", 
+             "Maule", 
+             "Ñuble", 
+             "Biobío", 
+             "La Araucanía", 
+             "Los Ríos", 
+             "Los Lagos", 
+             "Aysén", 
+             "Magallanes",
+             "Fuera de Chile")
+)
+```
+
+
+
+```{r}
+sd_nav(page_next = 'page2', show_prev = FALSE)
+```
+
+:::
+
+::: {.sd_page id=page2}
+
+### Preguntas sobre R
+.
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'frecuencia',
+  label = "¿Con qué frecuencia usas R?",
+  option = c("Diariamente", "Semanalmente", "Mensualmente", "Rara vez", "Nunca")
+)
+```
+
+
+```{r}
+sd_question(
+  type  = 'mc_buttons',
+  id    = 'nivel',
+  label = "¿Cuál es tu nivel de conocimientos en R?",
+  option = c(
+    "Nulo",
+    "Principiante",
+    "Intermedio",
+    "Avanzado",
+    "Experto"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type  = 'mc_multiple_buttons',
+  id    = 'areas',
+  label = "¿En qué áreas usas/usarías R? Selecciona las que apliquen.",
+  option = c(
+    "Ciencias naturales",
+    "Ciencias sociales",
+    "Ciencia de datos",
+    "Estadísticas",
+    "Economía/finanzas",
+    "Geografía",
+    "Informática",
+    "Salud",
+    "Educación",
+    "Otras"
+  )
+)
+```
+
+
+:::
+
+::: {.sd_page id=page3}
+
+### Preguntas sobre participación
+
+```{r}
+sd_question(
+  type  = 'mc_multiple',
+  id    = 'asistencia',
+  label = "¿Preferirías asistir presencial o remotamente? Marca las que correspondan.",
+  option = c("Presencial", "Remoto")
+)
+```
+
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'coordinacion',
+  label = "¿Te interesaría participar de la coordinación del grupo?",
+  option = c('Sí' = 'si', 'No' = 'no')
+)
+```
+
+```{r}
+sd_question(
+  type  = 'mc',
+  id    = 'contacto',
+  label = "¿Deseas que te contactemos para futuras reuniones? (solamente se te contactará para fines de participar en el grupo)",
+  option = c('Sí' = 'si', 'No' = 'no')
+)
+```
+
+
+```{r}
+sd_question(
+  type  = "text",
+  id    = "correo",
+  placeholder = "tu@correo.com",
+  label = "Correo electrónico"
+)
+```
+
+:::
+
+::: {.sd_page id=end}
+
+## Gracias 💜
+
+¡Muchas gracias por tu interés! Cualquier cosa puedes [contactarme](https://bastianolea.rbind.io/contacto/).
+
+```{r}
+sd_close()
+```
+
+:::
